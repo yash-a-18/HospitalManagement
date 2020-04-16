@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>Redirect</servlet-name>
+        <servlet-class>gui.Details</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PatientData</servlet-name>
+        <servlet-class>Details.PatientData</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DoctorData</servlet-name>
+        <servlet-class>Details.DoctorData</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DoctorRecords</servlet-name>
+        <servlet-class>config.DoctorRecords</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Redirect</servlet-name>
+        <url-pattern>/Redirect</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PatientData</servlet-name>
+        <url-pattern>/PatientData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DoctorData</servlet-name>
+        <url-pattern>/DoctorData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DoctorRecords</servlet-name>
+        <url-pattern>/DoctorRecords</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
