@@ -1,5 +1,5 @@
 package config;
-// Generated 16 Apr, 2020 9:48:31 PM by Hibernate Tools 4.3.1
+// Generated 17 Apr, 2020 3:49:20 AM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -10,7 +10,7 @@ import java.util.Date;
 public class Doctor  implements java.io.Serializable {
 
 
-     private DoctorId id;
+     private Integer docId;
      private String docName;
      private String docAddress;
      private Date docDob;
@@ -21,12 +21,12 @@ public class Doctor  implements java.io.Serializable {
      private String docYoe;
      private String docSpeciality;
      private String docAchievements;
+     private String docEmail;
 
     public Doctor() {
     }
 
-    public Doctor(DoctorId id, String docName, String docAddress, Date docDob, int docAge, String docMobileno, int docWeight, String docBloodgrp, String docYoe, String docSpeciality, String docAchievements) {
-       this.id = id;
+    public Doctor(String docName, String docAddress, Date docDob, int docAge, String docMobileno, int docWeight, String docBloodgrp, String docYoe, String docSpeciality, String docAchievements, String docEmail) {
        this.docName = docName;
        this.docAddress = docAddress;
        this.docDob = docDob;
@@ -37,14 +37,15 @@ public class Doctor  implements java.io.Serializable {
        this.docYoe = docYoe;
        this.docSpeciality = docSpeciality;
        this.docAchievements = docAchievements;
+       this.docEmail = docEmail;
     }
    
-    public DoctorId getId() {
-        return this.id;
+    public Integer getDocId() {
+        return this.docId;
     }
     
-    public void setId(DoctorId id) {
-        this.id = id;
+    public void setDocId(Integer docId) {
+        this.docId = docId;
     }
     public String getDocName() {
         return this.docName;
@@ -115,6 +116,13 @@ public class Doctor  implements java.io.Serializable {
     
     public void setDocAchievements(String docAchievements) {
         this.docAchievements = docAchievements;
+    }
+    public String getDocEmail() {
+        return this.docEmail;
+    }
+    
+    public void setDocEmail(String docEmail) {
+        this.docEmail = docEmail;
     }
 
 

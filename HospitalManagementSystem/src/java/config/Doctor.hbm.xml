@@ -1,17 +1,13 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 16 Apr, 2020 9:48:32 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 17 Apr, 2020 3:49:22 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="config.Doctor" table="doctor" catalog="mysql" optimistic-lock="version">
-        <composite-id name="id" class="config.DoctorId">
-            <key-property name="docId" type="int">
-                <column name="doc_id" />
-            </key-property>
-            <key-property name="docEmail" type="string">
-                <column name="doc_email" length="20" />
-            </key-property>
-        </composite-id>
+        <id name="docId" type="java.lang.Integer">
+            <column name="doc_id" />
+            <generator class="identity" />
+        </id>
         <property name="docName" type="string">
             <column name="doc_name" length="30" not-null="true" />
         </property>
@@ -41,6 +37,9 @@
         </property>
         <property name="docAchievements" type="string">
             <column name="doc_achievements" length="50" not-null="true" />
+        </property>
+        <property name="docEmail" type="string">
+            <column name="doc_email" length="20" not-null="true" />
         </property>
     </class>
 </hibernate-mapping>
