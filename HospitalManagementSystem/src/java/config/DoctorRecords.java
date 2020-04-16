@@ -51,6 +51,9 @@ Date doc_dob;
         doc_age=Integer.parseInt(request.getParameter("doc_age"));
         doc_weight=Integer.parseInt(request.getParameter("doc_weight"));
         doc_dob=new SimpleDateFormat("dd/MM/yyyy").parse(dob);
+//        String date="27/06/2000";
+//        Date bday=new SimpleDateFormat("dd/MM/yyyy").parse(date);
+//        insertRecord(new Doctor("aastha","sursagar appartments",bday,10,"634243489",67,"B+ve","10","Nothing","No achievements"));
         insertRecord(new Doctor(doc_name,doc_address,doc_dob,doc_age,doc_mobileno,doc_weight,doc_bloodgrp,doc_yoe,doc_speciality,doc_achievements));
     }
     private static void insertRecord(Doctor d) 

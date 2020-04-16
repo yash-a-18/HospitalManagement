@@ -1,5 +1,5 @@
 package config;
-// Generated 16 Apr, 2020 6:30:30 PM by Hibernate Tools 4.3.1
+// Generated 16 Apr, 2020 9:48:31 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -10,155 +10,113 @@ import java.util.Date;
 public class Doctor  implements java.io.Serializable {
 
 
-     private Integer doc_id;
-     private String doc_name;
-     private String doc_address;
-     private Date doc_dob;
-     private int doc_age;
-     private String doc_mobileno;
-     private int doc_weight;
-     private String doc_bloodgrp;
-     private String doc_yoe;
-    private String doc_speciality;
-     private String doc_achievements;
-     private String doc_email;
+     private DoctorId id;
+     private String docName;
+     private String docAddress;
+     private Date docDob;
+     private int docAge;
+     private String docMobileno;
+     private int docWeight;
+     private String docBloodgrp;
+     private String docYoe;
+     private String docSpeciality;
+     private String docAchievements;
 
-    public Doctor(String doc_name, String doc_address, Date doc_dob, int doc_age, String doc_mobileno, int doc_weight, String doc_bloodgrp, String doc_yoe, String doc_speciality, String doc_achievements, String doc_email) {
-              
-        this.doc_name = doc_name;
-        this.doc_address = doc_address;
-        this.doc_dob = doc_dob;
-        this.doc_age = doc_age;
-        this.doc_mobileno = doc_mobileno;
-        this.doc_weight = doc_weight;
-        this.doc_bloodgrp = doc_bloodgrp;
-        this.doc_yoe = doc_yoe;
-        this.doc_speciality = doc_speciality;
-        this.doc_achievements = doc_achievements;
-        this.doc_email = doc_email;
-    }
-     
     public Doctor() {
     }
 
-    public Doctor(Integer doc_id, String doc_name, String doc_address, Date doc_dob, int doc_age, String doc_mobileno, int doc_weight, String doc_bloodgrp, String doc_yoe, String doc_speciality, String doc_achievements, String doc_email) {
-        this.doc_id = doc_id;
-        this.doc_name = doc_name;
-        this.doc_address = doc_address;
-        this.doc_dob = doc_dob;
-        this.doc_age = doc_age;
-        this.doc_mobileno = doc_mobileno;
-        this.doc_weight = doc_weight;
-        this.doc_bloodgrp = doc_bloodgrp;
-        this.doc_yoe = doc_yoe;
-        this.doc_speciality = doc_speciality;
-        this.doc_achievements = doc_achievements;
-        this.doc_email = doc_email;
-    }
-
-    Doctor(String doc_name, String doc_address, Date doc_dob, int doc_age, String doc_mobileno, int doc_weight, String doc_bloodgrp, String doc_yoe, String doc_speciality, String doc_achievements) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-   
-
-    public Integer getDoc_id() {
-        return doc_id;
-    }
-
-    public void setDoc_id(Integer doc_id) {
-        this.doc_id = doc_id;
-    }
-
-    public String getDoc_name() {
-        return doc_name;
-    }
-
-    public void setDoc_name(String doc_name) {
-        this.doc_name = doc_name;
-    }
-
-    public String getDoc_address() {
-        return doc_address;
-    }
-
-    public void setDoc_address(String doc_address) {
-        this.doc_address = doc_address;
-    }
-
-    public Date getDoc_dob() {
-        return doc_dob;
-    }
-
-    public void setDoc_dob(Date doc_dob) {
-        this.doc_dob = doc_dob;
-    }
-
-    public int getDoc_age() {
-        return doc_age;
-    }
-
-    public void setDoc_age(int doc_age) {
-        this.doc_age = doc_age;
-    }
-
-    public String getDoc_mobileno() {
-        return doc_mobileno;
-    }
-
-    public void setDoc_mobileno(String doc_mobileno) {
-        this.doc_mobileno = doc_mobileno;
-    }
-
-    public int getDoc_weight() {
-        return doc_weight;
-    }
-
-    public void setDoc_weight(int doc_weight) {
-        this.doc_weight = doc_weight;
-    }
-
-    public String getDoc_bloodgrp() {
-        return doc_bloodgrp;
-    }
-
-    public void setDoc_bloodgrp(String doc_bloodgrp) {
-        this.doc_bloodgrp = doc_bloodgrp;
-    }
-
-    public String getDoc_yoe() {
-        return doc_yoe;
-    }
-
-    public void setDoc_yoe(String doc_yoe) {
-        this.doc_yoe = doc_yoe;
-    }
-
-    public String getDoc_speciality() {
-        return doc_speciality;
-    }
-
-    public void setDoc_speciality(String doc_speciality) {
-        this.doc_speciality = doc_speciality;
-    }
-
-    public String getDoc_achievements() {
-        return doc_achievements;
-    }
-
-    public void setDoc_achievements(String doc_achievements) {
-        this.doc_achievements = doc_achievements;
-    }
-
-    public String getDoc_email() {
-        return doc_email;
-    }
-
-    public void setDoc_email(String doc_email) {
-        this.doc_email = doc_email;
+    public Doctor(DoctorId id, String docName, String docAddress, Date docDob, int docAge, String docMobileno, int docWeight, String docBloodgrp, String docYoe, String docSpeciality, String docAchievements) {
+       this.id = id;
+       this.docName = docName;
+       this.docAddress = docAddress;
+       this.docDob = docDob;
+       this.docAge = docAge;
+       this.docMobileno = docMobileno;
+       this.docWeight = docWeight;
+       this.docBloodgrp = docBloodgrp;
+       this.docYoe = docYoe;
+       this.docSpeciality = docSpeciality;
+       this.docAchievements = docAchievements;
     }
    
+    public DoctorId getId() {
+        return this.id;
+    }
     
+    public void setId(DoctorId id) {
+        this.id = id;
+    }
+    public String getDocName() {
+        return this.docName;
+    }
+    
+    public void setDocName(String docName) {
+        this.docName = docName;
+    }
+    public String getDocAddress() {
+        return this.docAddress;
+    }
+    
+    public void setDocAddress(String docAddress) {
+        this.docAddress = docAddress;
+    }
+    public Date getDocDob() {
+        return this.docDob;
+    }
+    
+    public void setDocDob(Date docDob) {
+        this.docDob = docDob;
+    }
+    public int getDocAge() {
+        return this.docAge;
+    }
+    
+    public void setDocAge(int docAge) {
+        this.docAge = docAge;
+    }
+    public String getDocMobileno() {
+        return this.docMobileno;
+    }
+    
+    public void setDocMobileno(String docMobileno) {
+        this.docMobileno = docMobileno;
+    }
+    public int getDocWeight() {
+        return this.docWeight;
+    }
+    
+    public void setDocWeight(int docWeight) {
+        this.docWeight = docWeight;
+    }
+    public String getDocBloodgrp() {
+        return this.docBloodgrp;
+    }
+    
+    public void setDocBloodgrp(String docBloodgrp) {
+        this.docBloodgrp = docBloodgrp;
+    }
+    public String getDocYoe() {
+        return this.docYoe;
+    }
+    
+    public void setDocYoe(String docYoe) {
+        this.docYoe = docYoe;
+    }
+    public String getDocSpeciality() {
+        return this.docSpeciality;
+    }
+    
+    public void setDocSpeciality(String docSpeciality) {
+        this.docSpeciality = docSpeciality;
+    }
+    public String getDocAchievements() {
+        return this.docAchievements;
+    }
+    
+    public void setDocAchievements(String docAchievements) {
+        this.docAchievements = docAchievements;
+    }
+
 
 
 

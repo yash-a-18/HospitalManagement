@@ -5,11 +5,9 @@
         <group>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/HospitalManagementSystem/src/java/config/Doctor.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/HospitalManagementSystem/src/java/hibernate.reveng.xml</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/HospitalManagementSystem/web/reg_doctor.html</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/HospitalManagementSystem/src/java/config/HibernateUtil.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/HospitalManagementSystem/src/java/config/Doctor.hbm.xml</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/HospitalManagementSystem/src/java/hibernate.cfg.xml</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/HospitalManagementSystem/web/index.jsp</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/HospitalManagementSystem/src/java/config/DoctorId.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/HospitalManagementSystem/src/java/config/DoctorRecords.java</file>
         </group>
     </open-files>
