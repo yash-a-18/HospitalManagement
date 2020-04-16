@@ -46,9 +46,13 @@ Contributor(s):
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull</property>
     <property name="hibernate.connection.username">root</property>
+<<<<<<< HEAD:HospitalManagementSystem/src/java/config/hibernate.cfg.xml
     <property name="hibernate.connection.password">root</property>
     
     <!--mapping resource="Doctor.hbm.xml"/-->
     <mapping resource="Doctor.hbm.xml"/>
+=======
+    <mapping resource="config/Doctor.hbm.xml"/>
+>>>>>>> 8c53c6c31f31ea08fe0aa5a30c9fffb7fc5cd05e:HospitalManagementSystem/src/java/hibernate.cfg.xml
   </session-factory>
 </hibernate-configuration>
