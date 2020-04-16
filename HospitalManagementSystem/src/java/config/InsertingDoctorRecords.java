@@ -20,17 +20,24 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 
 /**
  *
- * @author admin
+ * @author DC
  */
+<<<<<<< HEAD:HospitalManagementSystem/src/java/config/InsertingDoctorRecords.java
 @WebServlet(name = "InsertingDoctorRecords", urlPatterns = {"/InsertingDoctorRecords"})
 public class InsertingDoctorRecords extends HttpServlet {
 String doc_name,dob,doc_address,doc_mobileno,doc_bloodgrp,doc_speciality,doc_achievements,doc_email,doc_yoe;
 int doc_age,doc_weight;
 Date doc_dob;
+=======
+public class DoctorRecords extends HttpServlet {
+
+>>>>>>> 386b9b9e5764f9a0cf8417893184812770cb6606:HospitalManagementSystem/src/java/config/DoctorRecords.java
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -40,9 +47,13 @@ Date doc_dob;
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    String doc_name,dob,doc_address,doc_mobileno,doc_bloodgrp,doc_speciality,doc_achievements,doc_email,doc_yoe;
+    int doc_age,doc_weight;
+    Date doc_dob;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ParseException {
         response.setContentType("text/html;charset=UTF-8");
+<<<<<<< HEAD:HospitalManagementSystem/src/java/config/InsertingDoctorRecords.java
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -80,6 +91,44 @@ Date doc_dob;
        // insertRecord(new Doctor(doc_name,doc_address,doc_dob,doc_age,doc_mobileno,doc_weight,doc_bloodgrp,doc_yoe,doc_speciality,doc_achievements,doc_email));
         
     }
+=======
+        PrintWriter out=response.getWriter();
+        doc_name=request.getParameter("doc_name");
+        doc_address=request.getParameter("doc_address");
+        dob=(request.getParameter("doc_dob"));
+        doc_mobileno=request.getParameter("doc_mobileno");
+        doc_bloodgrp=request.getParameter("doc_bloodgrp");
+        doc_speciality=request.getParameter("doc_speciality");
+        doc_achievements=request.getParameter("doc_achievements");
+        doc_email=request.getParameter("doc_email");
+        doc_yoe=request.getParameter("doc_yoe");
+        doc_age=Integer.parseInt(request.getParameter("doc_age"));
+        doc_weight=Integer.parseInt(request.getParameter("doc_weight"));
+        doc_dob=new SimpleDateFormat("dd/MM/yyyy").parse(dob);
+//        String date="27/06/2000";
+//        Date bday=new SimpleDateFormat("dd/MM/yyyy").parse(date);
+//        insertRecord(new Doctor("aastha","sursagar appartments",bday,10,"634243489",67,"B+ve","10","Nothing","No achievements"));
+        insertRecord(new Doctor(doc_name,doc_address,doc_dob,doc_age,doc_mobileno,doc_weight,doc_bloodgrp,doc_yoe,doc_speciality,doc_achievements));
+        out.println("Successfull");
+    }
+    private static void insertRecord(Doctor d) 
+    { 
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory(); 
+        Session session = sessionFactory.openSession(); 
+        session.beginTransaction(); 
+        session.save(d); 
+        session.getTransaction().commit();
+                
+        /*Configuration cfg=new Configuration();
+        cfg.configure("hiberate.cfg.xml");
+        //sessionFactory factory=cfg.buildSessionFacatory();
+        Session session=sessionFactory.openSession();
+        Transaction t=session.beginTransaction();
+        
+        d.setDoc;*/
+    }
+
+>>>>>>> 386b9b9e5764f9a0cf8417893184812770cb6606:HospitalManagementSystem/src/java/config/DoctorRecords.java
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -92,11 +141,19 @@ Date doc_dob;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+<<<<<<< HEAD:HospitalManagementSystem/src/java/config/InsertingDoctorRecords.java
     try {
         processRequest(request, response);
     } catch (ParseException ex) {
         Logger.getLogger(InsertingDoctorRecords.class.getName()).log(Level.SEVERE, null, ex);
     }
+=======
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(DoctorRecords.class.getName()).log(Level.SEVERE, null, ex);
+        }
+>>>>>>> 386b9b9e5764f9a0cf8417893184812770cb6606:HospitalManagementSystem/src/java/config/DoctorRecords.java
     }
 
     /**
@@ -110,11 +167,19 @@ Date doc_dob;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+<<<<<<< HEAD:HospitalManagementSystem/src/java/config/InsertingDoctorRecords.java
     try {
         processRequest(request, response);
     } catch (ParseException ex) {
         Logger.getLogger(InsertingDoctorRecords.class.getName()).log(Level.SEVERE, null, ex);
     }
+=======
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(DoctorRecords.class.getName()).log(Level.SEVERE, null, ex);
+        }
+>>>>>>> 386b9b9e5764f9a0cf8417893184812770cb6606:HospitalManagementSystem/src/java/config/DoctorRecords.java
     }
 
     /**

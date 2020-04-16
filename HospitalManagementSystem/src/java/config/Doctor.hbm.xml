@@ -4,10 +4,28 @@
 <!-- Generated 17 Apr, 2020 3:49:22 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="config.Doctor" table="doctor" catalog="mysql" optimistic-lock="version">
+<<<<<<< HEAD
         <id name="docId" type="java.lang.Integer">
             <column name="doc_id" />
             <generator class="identity" />
         </id>
+=======
+<<<<<<< HEAD
+        <id name="docId" type="java.lang.Integer">
+            <column name="doc_id" />
+            <generator class="increment" />
+        </id>
+=======
+        <composite-id name="id" class="config.DoctorId">
+            <key-property name="docId" type="int">
+                <column name="doc_id" />
+            </key-property>
+            <key-property name="docEmail" type="string">
+                <column name="doc_email" length="20" />
+            </key-property>
+        </composite-id>
+>>>>>>> 8c53c6c31f31ea08fe0aa5a30c9fffb7fc5cd05e
+>>>>>>> 386b9b9e5764f9a0cf8417893184812770cb6606
         <property name="docName" type="string">
             <column name="doc_name" length="30" not-null="true" />
         </property>
