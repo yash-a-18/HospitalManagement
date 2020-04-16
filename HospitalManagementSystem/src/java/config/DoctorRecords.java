@@ -18,15 +18,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 /**
  *
- * @author admin
+ * @author DC
  */
 public class DoctorRecords extends HttpServlet {
-String doc_name,dob,doc_address,doc_mobileno,doc_bloodgrp,doc_speciality,doc_achievements,doc_email,doc_yoe;
-int doc_age,doc_weight;
-Date doc_dob;
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -36,9 +36,13 @@ Date doc_dob;
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    String doc_name,dob,doc_address,doc_mobileno,doc_bloodgrp,doc_speciality,doc_achievements,doc_email,doc_yoe;
+    int doc_age,doc_weight;
+    Date doc_dob;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ParseException {
         response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out=response.getWriter();
         doc_name=request.getParameter("doc_name");
         doc_address=request.getParameter("doc_address");
         dob=(request.getParameter("doc_dob"));
@@ -52,15 +56,25 @@ Date doc_dob;
         doc_weight=Integer.parseInt(request.getParameter("doc_weight"));
         doc_dob=new SimpleDateFormat("dd/MM/yyyy").parse(dob);
         insertRecord(new Doctor(doc_name,doc_address,doc_dob,doc_age,doc_mobileno,doc_weight,doc_bloodgrp,doc_yoe,doc_speciality,doc_achievements));
+        out.println("Successfull");
     }
     private static void insertRecord(Doctor d) 
     { 
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory(); 
         Session session = sessionFactory.openSession(); 
-        session.beginTransaction(); session.save(d); 
-        session.getTransaction().commit(); 
-    } 
- 
+        session.beginTransaction(); 
+        session.save(d); 
+        session.getTransaction().commit();
+                
+        /*Configuration cfg=new Configuration();
+        cfg.configure("hiberate.cfg.xml");
+        //sessionFactory factory=cfg.buildSessionFacatory();
+        Session session=sessionFactory.openSession();
+        Transaction t=session.beginTransaction();
+        
+        d.setDoc;*/
+    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -73,11 +87,11 @@ Date doc_dob;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    try {
-        processRequest(request, response);
-    } catch (ParseException ex) {
-        Logger.getLogger(DoctorRecords.class.getName()).log(Level.SEVERE, null, ex);
-    }
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(DoctorRecords.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -91,11 +105,11 @@ Date doc_dob;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    try {
-        processRequest(request, response);
-    } catch (ParseException ex) {
-        Logger.getLogger(DoctorRecords.class.getName()).log(Level.SEVERE, null, ex);
-    }
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(DoctorRecords.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -106,5 +120,6 @@ Date doc_dob;
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// 
+    }// </editor-fold>
+
 }

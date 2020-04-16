@@ -56,53 +56,60 @@ and open the template in the editor.
         </center>
         <div class="container">
   <h2>Registration Form</h2>
-  <form action="#" class="needs-validation" novalidate>
+  <form action="DoctorRecords" method="POST" class="needs-validation" novalidate>
       
     <div class="form-group">
-      <label for="doct_name">Name:</label>
-      <input type="text" class="form-control" id="doct_name" placeholder="(Full Name)" name="doct_name" required>
+      <label for="doc_name">Name:</label>
+      <input type="text" class="form-control" id="doc_name" placeholder="(Full Name)" name="doc_name" required>
       <div class="valid-feedback"><strong>Valid.</strong></div>
       <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
     </div>
       
     <div class="form-group">
-      <label for="doct_address">Address:</label>
-      <input type="text" class="form-control" id="doct_address" placeholder="(Full Address)" name="doct_address" required>
+      <label for="doc_address">Address:</label>
+      <input type="text" class="form-control" id="doc_address" placeholder="(Full Address)" name="doc_address" required>
+      <div class="valid-feedback"><strong>Valid.</strong></div>
+      <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
+    </div>
+      
+      <div class="form-group">
+      <label for="doc_email">Email:</label>
+      <input type="text" class="form-control" id="doc_email" placeholder="something@gmail.com" name="doc_email" required>
       <div class="valid-feedback"><strong>Valid.</strong></div>
       <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
     </div>
       
     <div class="form-group">
-        <label for="doct_dob">Birth Date:</label>
-        <input type="date" class="form-control" id="doct_dob" name="doct_dob" required>
+        <label for="doc_dob">Birth Date:</label>
+        <input type="date" class="form-control" id="doc_dob" name="doc_dob" required>
         <div class="valid-feedback"><strong>Valid.</strong></div>
       <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
   </div>
       
      <div class="form-group">
-      <label for="doct_age">Age:</label>
-      <input type="text" class="form-control" id="doct_age" placeholder="Age in years" name="doct_age" required>
+      <label for="doc_age">Age:</label>
+      <input type="text" class="form-control" id="doc_age" placeholder="Age in years" name="doc_age" required>
       <div class="valid-feedback"><strong>Valid.</strong></div>
       <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
     </div>
       
      <div class="form-group">
-      <label for="doct_mobileno">Mobile Number:</label>
-      <input type="text" class="form-control" id="doct_mobileno" name="doct_mobileno" required>
+      <label for="doc_mobileno">Mobile Number:</label>
+      <input type="text" class="form-control" id="doc_mobileno" name="doc_mobileno" required>
       <div class="valid-feedback"><strong>Valid.</strong></div>
       <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
     </div> 
       
       <div class="form-group">
-      <label for="doct_weight">Weight:</label>
-      <input type="text" class="form-control" id="doct_weight" placeholder="in kg" name="doct_weight" required>
+      <label for="doc_weight">Weight:</label>
+      <input type="text" class="form-control" id="doc_weight" placeholder="in kg" name="doc_weight" required>
       <div class="valid-feedback"><strong>Valid.</strong></div>
       <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
     </div>
       
       <div class="form-group">
-      <label for="doct_bloodgrp">Blood Group (select one):</label>
-      <select class="form-control" id="doct_bloodgrp" name="doct_bloodgrp">
+      <label for="doc_bloodgrp">Blood Group (select one):</label>
+      <select class="form-control" id="doc_bloodgrp" name="doc_bloodgrp">
         <option value="A +ve">A +ve</option>
         <option value="A -ve">A -ve</option>
         <option value="B +ve">B +ve</option>
@@ -115,18 +122,18 @@ and open the template in the editor.
       </div>
       
       <div class="form-group">
-        <label for="doct_yoe">Year(s) of Experience:</label>
-        <input type="text" class="form-control" placeholder="(if any)" id="doct_yoe" name="doct_yoe">
+        <label for="doc_yoe">Year(s) of Experience:</label>
+        <input type="text" class="form-control" placeholder="(if any)" id="doc_yoe" name="doc_yoe">
   </div>
       
       <div class="form-group">
-      <label for="doct_speciality">Speciality:</label>
-      <input type="text" class="form-control" id="doct_speciality" placeholder="speciality(if any)" name="doct_speciality">
+      <label for="doc_speciality">Speciality:</label>
+      <input type="text" class="form-control" id="doc_speciality" placeholder="speciality(if any)" name="doc_speciality">
     </div>
       
       <div class="form-group">
-      <label for="doct_achv">Achievements:</label>
-      <input type="text" class="form-control" id="doct_achv" placeholder="(if any)" name="doct_achv">
+      <label for="doc_achievements">Achievements:</label>
+      <input type="text" class="form-control" id="doc_achievements" placeholder="(if any)" name="doc_achievements">
     </div>
       
     <button type="submit" class="btn btn-success">Submit</button>
