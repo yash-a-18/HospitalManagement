@@ -9,27 +9,76 @@ and open the template in the editor.
         <title>Sign In</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     </head>
+    <style>
+        body{
+  background-image: url("136949.jpg");
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+       background-size:cover;
+       }
+    </style>
+    
+    
     <body>
-        <center><form action="Details.java">
-            <table border="1">
-                <tr>
-                    <td colspan="2">
-                <center><h1>Login Page</h1></center>
-                    </td>
-                </tr>
-               <tr>
-                    <td>Username:</td>
-                    <td><input type="text" name="usrnm"></td>
-                </tr>
-                <tr>
-                    <td>Password:</td>
-                    <td><input type="password" name="pswd"></td>
-                </tr>
-               <tr>
-                    <td colspan="2"><center><input type="submit" name="submit" value="Submit"></center></td>
-                </tr>
-            </table>
-            </form></center>
+        
+            <script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+        
+        <center>
+            <h1>
+                Hospital Management System
+            </h1>
+            <p>
+                Place where all your problems are cured
+            </p>
+        </center>
+        <div class="container">
+  <h2>Login</h2>
+  <form action="Doc_signedin.html" class="needs-validation" novalidate>
+    <div class="form-group">
+      <label for="uname">Username:</label>
+      <input type="text" class="form-control form-control-lg" id="uname" placeholder="Enter username" name="uname" required>
+      <div class="valid-feedback"><strong>Valid.</strong></div>
+      <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control form-control-lg" id="pwd" placeholder="Enter password" name="pswd" required>
+      <div class="valid-feedback"><strong>Valid.</strong></div>
+      <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+    <br>
+    <strong>
+        Click below to create an account.<br>
+    </strong>
+    <a href="reg_doctor.html"><button type="button" class="btn btn-secondary">Sign up</button></a>
+</div>
+    
     </body>
 </html>

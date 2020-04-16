@@ -4,9 +4,25 @@
         <servlet-name>Redirect</servlet-name>
         <servlet-class>gui.Details</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PatientData</servlet-name>
+        <servlet-class>Details.PatientData</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DoctorData</servlet-name>
+        <servlet-class>Details.DoctorData</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Redirect</servlet-name>
         <url-pattern>/Redirect</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PatientData</servlet-name>
+        <url-pattern>/PatientData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DoctorData</servlet-name>
+        <url-pattern>/DoctorData</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -9,55 +9,125 @@ and open the template in the editor.
         <title>Register Patient</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     </head>
+    
+    <style>
+        body{
+  background-image: url("136949.jpg");
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-position: center; 
+       background-size:cover;
+       }
+    </style>
+    
     <body>
-        <center><form action="reg_successfull.html">
-            <table border="1">
-                <tr>
-                    <td>Name:</td>
-                    <td><input type="text" name="name" value="(Full Name)"></td>
-                </tr>
-                <tr>
-                    <td>Address:</td>
-                    <td><input type="text" name="addr" value="(Full Address)"></td>
-                </tr>
-                <tr>
-                    <td>Phone Number:</td>
-                    <td><input type="text" name="phno"></td>
-                </tr>
-                <tr>
-                    <td>Age:</td>
-                    <td><input type="text" name="age"></td>
-                </tr>
-                <tr>
-                    <td>Weight:</td>
-                    <td><input type="text" name="weight"></td>
-                </tr>
-                <tr>
-                    <td>Blood Group:</td>
-                            <td><select>
-                                    <option>A +ve</option>
-                                    <option>A -ve</option>
-                                    <option>B +ve</option>
-                                    <option>B -ve</option>
-                                    <option>AB +ve</option>
-                                    <option>AB -ve</option>
-                                    <option>O +ve</option>
-                                    <option>O -ve</option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td>Previous Medical History(if any):</td>
-                    <td><input type="text" name="pmh"></td>
-                </tr>
-                <tr>
-                    <td>Symptoms:</td>
-                    <td><input type="text" name="symptoms"></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><center><input type="submit" name="submit" value="Submit"></center></td>
-                </tr>
-            </table>
-        </form></center>
+        
+        <script>
+// Disable form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Get the forms we want to add validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+<center>
+            <h1>
+                Hospital Management System
+            </h1>
+            <p>
+                Place where all your problems are cured
+            </p>
+        </center>
+        <div class="container">
+  <h2>Registration Form</h2>
+  <form action="#" class="needs-validation" novalidate>
+      
+    <div class="form-group">
+      <label for="pat_name">Name:</label>
+      <input type="text" class="form-control" id="pat_name" placeholder="(Full Name)" name="pat_name" required>
+      <div class="valid-feedback"><strong>Valid.</strong></div>
+      <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
+    </div>
+      
+    <div class="form-group">
+      <label for="pat_address">Address:</label>
+      <input type="text" class="form-control" id="pat_address" placeholder="(Full Address)" name="pat_address" required>
+      <div class="valid-feedback"><strong>Valid.</strong></div>
+      <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
+    </div>
+      
+    <div class="form-group">
+        <label for="pat_dob">Birth Date:</label>
+        <input type="date" class="form-control" id="pat_dob" name="pat_dob" required>
+        <div class="valid-feedback"><strong>Valid.</strong></div>
+      <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
+  </div>
+      
+     <div class="form-group">
+      <label for="pat_age">Age:</label>
+      <input type="text" class="form-control" id="pat_age" placeholder="Age in years" name="pat_age" required>
+      <div class="valid-feedback"><strong>Valid.</strong></div>
+      <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
+    </div>
+      
+     <div class="form-group">
+      <label for="pat_mobileno">Mobile Number:</label>
+      <input type="text" class="form-control" id="pat_mobileno" name="pat_mobileno" required>
+      <div class="valid-feedback"><strong>Valid.</strong></div>
+      <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
+    </div> 
+      
+      <div class="form-group">
+      <label for="pat_weight">Weight:</label>
+      <input type="text" class="form-control" id="pat_weight" placeholder="in kg" name="pat_weight" required>
+      <div class="valid-feedback"><strong>Valid.</strong></div>
+      <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
+    </div>
+      
+      <div class="form-group">
+      <label for="pat_bloodgrp">Blood Group (select one):</label>
+      <select class="form-control" id="pat_bloodgrp" name="pat_bloodgrp">
+        <option value="A +ve">A +ve</option>
+        <option value="A -ve">A -ve</option>
+        <option value="B +ve">B +ve</option>
+        <option value="B -ve">B -ve</option>
+        <option value="AB +ve">AB +ve</option>
+        <option value="AB -ve">AB -ve</option>
+        <option value="O +ve">O +ve</option>
+        <option value="O -ve">O -ve</option>
+      </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="pat_pmh">Previous Medical History:</label>
+        <input type="text" class="form-control" placeholder="(if any)" id="pat_pmh" name="pat_pmh">
+  </div>
+      
+      <div class="form-group">
+      <label for="pat_symptoms">Symptoms:</label>
+      <input type="text" class="form-control" id="pat_symptoms" placeholder="(if any)" name="pat_symptoms">
+    </div>
+      
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+    </div>
     </body>
 </html>
