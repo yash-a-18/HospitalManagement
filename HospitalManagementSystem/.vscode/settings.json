@@ -1,0 +1,3 @@
+{
+    "java.checkstyle.configuration": "${workspaceFolder}\\src\\java\\hibernate.reveng.xml"
+}

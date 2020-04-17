@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Register Doctor</title>
+        <title>Register Patient</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -14,6 +14,7 @@ and open the template in the editor.
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     </head>
+    
     <style>
         body{
   background-image: url("136949.jpg");
@@ -23,9 +24,10 @@ and open the template in the editor.
        background-size:cover;
        }
     </style>
+    
     <body>
         
-    <script>
+        <script>
 // Disable form submissions if there are invalid fields
 (function() {
   'use strict';
@@ -46,7 +48,7 @@ and open the template in the editor.
 })();
 </script>
 
-     <center>
+<center>
             <h1>
                 Hospital Management System
             </h1>
@@ -56,60 +58,53 @@ and open the template in the editor.
         </center>
         <div class="container">
   <h2>Registration Form</h2>
-  <form action="InsertingDoctorRecords" class="needs-validation" novalidate>
+  <form action="#" class="needs-validation" novalidate>
       
     <div class="form-group">
-      <label for="doc_name">Name:</label>
-      <input type="text" class="form-control" id="doc_name" placeholder="(Full Name)" name="doc_name" required>
+      <label for="pat_name">Name:</label>
+      <input type="text" class="form-control" id="pat_name" placeholder="(Full Name)" name="pat_name" required>
       <div class="valid-feedback"><strong>Valid.</strong></div>
       <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
     </div>
       
     <div class="form-group">
-      <label for="doc_address">Address:</label>
-      <input type="text" class="form-control" id="doc_address" placeholder="(Full Address)" name="doc_address" required>
-      <div class="valid-feedback"><strong>Valid.</strong></div>
-      <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
-    </div>
-      
-      <div class="form-group">
-      <label for="doc_email">Email:</label>
-      <input type="text" class="form-control" id="doc_email" placeholder="something@gmail.com" name="doc_email" required>
+      <label for="pat_address">Address:</label>
+      <input type="text" class="form-control" id="pat_address" placeholder="(Full Address)" name="pat_address" required>
       <div class="valid-feedback"><strong>Valid.</strong></div>
       <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
     </div>
       
     <div class="form-group">
-        <label for="doc_dob">Birth Date:</label>
-        <input type="date" class="form-control" id="doc_dob" name="doc_dob" required>
+        <label for="pat_dob">Birth Date:</label>
+        <input type="date" class="form-control" id="pat_dob" name="pat_dob" required>
         <div class="valid-feedback"><strong>Valid.</strong></div>
       <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
   </div>
       
      <div class="form-group">
-      <label for="doc_age">Age:</label>
-      <input type="text" class="form-control" id="doc_age" placeholder="Age in years" name="doc_age" required>
+      <label for="pat_age">Age:</label>
+      <input type="text" class="form-control" id="pat_age" placeholder="Age in years" name="pat_age" required>
       <div class="valid-feedback"><strong>Valid.</strong></div>
       <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
     </div>
       
      <div class="form-group">
-      <label for="doc_mobileno">Mobile Number:</label>
-      <input type="text" class="form-control" id="doc_mobileno" name="doc_mobileno" required>
+      <label for="pat_mobileno">Mobile Number:</label>
+      <input type="text" class="form-control" id="pat_mobileno" name="pat_mobileno" required>
       <div class="valid-feedback"><strong>Valid.</strong></div>
       <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
     </div> 
       
       <div class="form-group">
-      <label for="doc_weight">Weight:</label>
-      <input type="text" class="form-control" id="doc_weight" placeholder="in kg" name="doc_weight" required>
+      <label for="pat_weight">Weight:</label>
+      <input type="text" class="form-control" id="pat_weight" placeholder="in kg" name="pat_weight" required>
       <div class="valid-feedback"><strong>Valid.</strong></div>
       <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
     </div>
       
       <div class="form-group">
-      <label for="doc_bloodgrp">Blood Group (select one):</label>
-      <select class="form-control" id="doc_bloodgrp" name="doc_bloodgrp">
+      <label for="pat_bloodgrp">Blood Group (select one):</label>
+      <select class="form-control" id="pat_bloodgrp" name="pat_bloodgrp">
         <option value="A +ve">A +ve</option>
         <option value="A -ve">A -ve</option>
         <option value="B +ve">B +ve</option>
@@ -122,28 +117,17 @@ and open the template in the editor.
       </div>
       
       <div class="form-group">
-        <label for="doc_yoe">Year(s) of Experience:</label>
-        <input type="text" class="form-control" placeholder="(if any)" id="doc_yoe" name="doc_yoe">
+        <label for="pat_pmh">Previous Medical History:</label>
+        <input type="text" class="form-control" placeholder="(if any)" id="pat_pmh" name="pat_pmh">
   </div>
       
       <div class="form-group">
-      <label for="doc_speciality">Speciality:</label>
-      <input type="text" class="form-control" id="doc_speciality" placeholder="speciality(if any)" name="doc_speciality">
+      <label for="pat_symptoms">Symptoms:</label>
+      <input type="text" class="form-control" id="pat_symptoms" placeholder="(if any)" name="pat_symptoms">
     </div>
       
-      <div class="form-group">
-      <label for="doc_achievements">Achievements:</label>
-      <input type="text" class="form-control" id="doc_achievements" placeholder="(if any)" name="doc_achievements">
-    </div>
-      <div class="form-group">
-      <label for="doct_email">Email:</label>
-      <input type="text" class="form-control" id="doct_email" placeholder="(if any)" name="doct_email">
-    </div>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
     </div>
-    
-    
-    
     </body>
 </html>

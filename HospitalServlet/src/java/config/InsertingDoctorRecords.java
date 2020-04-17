@@ -7,6 +7,7 @@ package config;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,11 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-
+import static javax.xml.bind.DatatypeConverter.parseInteger;
 
 /**
  *
@@ -30,9 +27,10 @@ import org.hibernate.cfg.Configuration;
  */
 @WebServlet(name = "InsertingDoctorRecords", urlPatterns = {"/InsertingDoctorRecords"})
 public class InsertingDoctorRecords extends HttpServlet {
-String doc_name,dob,doc_address,doc_mobileno,doc_bloodgrp,doc_speciality,doc_achievements,doc_email,doc_yoe;
-int doc_age,doc_weight;
-Date doc_dob;
+
+    String doc_name,dob,doc_address,doc_mobileno,doc_bloodgrp,doc_speciality,doc_achievements,doc_email;
+    int doc_age,doc_weight,doc_yoe;
+    Date doc_dob;
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -45,7 +43,8 @@ Date doc_dob;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ParseException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        PrintWriter out = response.getWriter();
+        try {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -56,32 +55,27 @@ Date doc_dob;
             out.println("<h1>Servlet InsertingDoctorRecords at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
-        }
-        doc_name=request.getParameter("doct_name");
-        doc_address=request.getParameter("doct_address");
-        dob=(request.getParameter("doct_dob"));
-        doc_mobileno=request.getParameter("doct_mobileno");
-        doc_bloodgrp=request.getParameter("doct_bloodgrp");
-        doc_speciality=request.getParameter("doct_speciality");
-        doc_achievements=request.getParameter("doct_achievements");
-        doc_email=request.getParameter("doct_email");
-        doc_yoe=request.getParameter("doct_yoe");
-        doc_age=Integer.parseInt(request.getParameter("doct_age"));
-        doc_weight=Integer.parseInt(request.getParameter("doct_weight"));
-        doc_dob=new SimpleDateFormat("dd/MM/yyyy").parse(dob);
+            doc_name=request.getParameter("doc_name");
+        doc_address=request.getParameter("doc_address");
+        dob=(request.getParameter("doc_dob"));
+        doc_mobileno=request.getParameter("doc_mobileno");
+        doc_bloodgrp=request.getParameter("doc_bloodgrp");
+        doc_speciality=request.getParameter("doc_speciality");
+        doc_achievements=request.getParameter("doc_achievements");
+        doc_email=request.getParameter("doc_email");
+        doc_yoe=Integer.parseInt(request.getParameter("doc_yoe"));
+        doc_age=Integer.parseInt(request.getParameter("doc_age"));
+        doc_weight=Integer.parseInt(request.getParameter("doc_weight"));
+        doc_dob=new SimpleDateFormat("MM/dd/yyyy").parse(dob);
         HttpSession session=request.getSession(true);
-        try
-        {
-            InsertRecord ir=new InsertRecord();
-            ir.insertRecords(doc_name,doc_address,doc_dob,doc_age,doc_mobileno,doc_weight,doc_bloodgrp,doc_yoe,doc_speciality,doc_achievements,doc_email);
+        InsertRecords ir=new InsertRecords();
+        System.out.println("Inside");
+        ir.insertRecords(doc_name,doc_address,doc_dob,doc_age,doc_mobileno,doc_weight,doc_bloodgrp,doc_yoe,doc_speciality,doc_achievements,doc_email);
+        } finally {
+            out.close();
         }
-        catch(Exception e)
-        {
-            System.out.println(e);
-        }
-       // insertRecord(new Doctor(doc_name,doc_address,doc_dob,doc_age,doc_mobileno,doc_weight,doc_bloodgrp,doc_yoe,doc_speciality,doc_achievements,doc_email));
-        
     }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -94,11 +88,11 @@ Date doc_dob;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    try {
-        processRequest(request, response);
-    } catch (ParseException ex) {
-        Logger.getLogger(InsertingDoctorRecords.class.getName()).log(Level.SEVERE, null, ex);
-    }
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(InsertingDoctorRecords.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -112,11 +106,11 @@ Date doc_dob;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-    try {
-        processRequest(request, response);
-    } catch (ParseException ex) {
-        Logger.getLogger(InsertingDoctorRecords.class.getName()).log(Level.SEVERE, null, ex);
-    }
+        try {
+            processRequest(request, response);
+        } catch (ParseException ex) {
+            Logger.getLogger(InsertingDoctorRecords.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
