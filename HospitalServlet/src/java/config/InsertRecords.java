@@ -8,9 +8,7 @@ package config;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.text.DateFormat;
 import java.util.Date;
-import java.text.SimpleDateFormat;  
 
 /**
  *
@@ -21,6 +19,7 @@ public class InsertRecords {
     public Connection connection;
     public void databaseConnection(){
         try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection= DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_management_system","root","");
             System.out.println("\nConnection Sucessfull.\n");
         }
@@ -65,7 +64,7 @@ public class InsertRecords {
             pst.setString(10,doc_achievements);
             pst.setString(11,doc_email);
             pst.executeQuery();
-            
+            connection.close();
             System.out.println("\nInserted Successfully.\n");
         }
         catch(Exception e)

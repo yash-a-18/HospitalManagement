@@ -58,6 +58,7 @@ public class InsertingDoctorRecords extends HttpServlet {
             doc_name=request.getParameter("doc_name");
         doc_address=request.getParameter("doc_address");
         dob=(request.getParameter("doc_dob"));
+        //out.println(dob);
         doc_mobileno=request.getParameter("doc_mobileno");
         doc_bloodgrp=request.getParameter("doc_bloodgrp");
         doc_speciality=request.getParameter("doc_speciality");
@@ -67,7 +68,7 @@ public class InsertingDoctorRecords extends HttpServlet {
         doc_age=Integer.parseInt(request.getParameter("doc_age"));
         doc_weight=Integer.parseInt(request.getParameter("doc_weight"));
         doc_dob=new SimpleDateFormat("MM/dd/yyyy").parse(dob);
-        HttpSession session=request.getSession(true);
+        //HttpSession session=request.getSession(true);
         InsertRecords ir=new InsertRecords();
         System.out.println("Inside");
         ir.insertRecords(doc_name,doc_address,doc_dob,doc_age,doc_mobileno,doc_weight,doc_bloodgrp,doc_yoe,doc_speciality,doc_achievements,doc_email);

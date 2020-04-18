@@ -58,7 +58,7 @@ and open the template in the editor.
         </center>
         <div class="container">
   <h2>Login</h2>
-  <form action="Doc_signedin.html" class="needs-validation" novalidate>
+  <form action="LoginVerifierServlet" method="POST" class="needs-validation" novalidate>
     <div class="form-group">
       <label for="uname">Username:</label>
       <input type="text" class="form-control form-control-lg" id="uname" placeholder="Enter username" name="uname" required>
@@ -67,7 +67,7 @@ and open the template in the editor.
     </div>
     <div class="form-group">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control form-control-lg" id="pwd" placeholder="Enter password" name="pswd" required>
+      <input type="password" class="form-control form-control-lg" id="pwd" placeholder="Enter password" name="pwd" required>
       <div class="valid-feedback"><strong>Valid.</strong></div>
       <div class="invalid-feedback"><strong>Please fill out this field.</strong></div>
     </div>
