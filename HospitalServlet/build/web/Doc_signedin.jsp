@@ -4,6 +4,9 @@
     Author     : DC
 --%>
 
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -40,7 +43,7 @@
             e.printStackTrace();
         }
         Connection connection=null;
-        Statement statement=null;
+        PreparedStatement pst=null;
         ResultSet resultset=null;
         
     %>
@@ -59,7 +62,9 @@
     <img src="logo.jpg" alt="logo" style="width:70px;">
   </a>
     
-    <a class="nav-link" href="#">Appointments</a>
+    <a class="nav-link" href="Doc_signedin.jsp">Appointments</a>
+    
+    <a class="nav-link" href="viewAllPatients.jsp">Consultations</a>
   
     <ul class="navbar-nav ml-auto">
     <li class="nav-item mr-sm-5">
@@ -84,6 +89,7 @@
         <th>Name</th>
         <th>Gender</th>
         <th>Age</th>
+        <th>Date of Admission</th>
         <!--<th>Status</th>-->
         <th>Bill Amount</th>
         <th>Profile</th>
@@ -91,16 +97,20 @@
     </thead>
     <tbody>
         <%try{
+        Date dNow = new Date( );
+        SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
         connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_management_system","root","");
-        statement=connection.createStatement();
-        resultset=statement.executeQuery("SELECT doc_id,doc_name,doc_gender,doc_age FROM patient");
+        pst=connection.prepareStatement("SELECT pat_id,pat_name,pat_gender,pat_age,pat_doa FROM patient WHERE pat_doa=?");
+        pst.setString(1,ft.format(dNow));
+        resultset=pst.executeQuery();
         while(resultset.next()){
 %>
       <tr>
-        <td><%=resultset.getString("doc_id")%></td>
-        <td><%=resultset.getString("doc_name")%></td>
-        <td><%=resultset.getString("doc_gender")%></td>
-        <td><%=resultset.getString("doc_age")%></td>
+        <td><%=resultset.getString("pat_id")%></td>
+        <td><%=resultset.getString("pat_name")%></td>
+        <td><%=resultset.getString("pat_gender")%></td>
+        <td><%=resultset.getString("pat_age")%></td>
+        <td><%=resultset.getString("pat_doa")%></td>
         <td>00.00</td>
         <td><a href="viewPatient.jsp">view</a><td>
       </tr>

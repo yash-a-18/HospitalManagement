@@ -50,7 +50,7 @@ public class LoginVerifierServlet extends HttpServlet {
             out.println("Inside");
             Class.forName("com.mysql.cj.jdbc.Driver");
             out.println("Inside");
-            Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_management_system&&table=doctor","root","");
+            Connection connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_management_system?zeroDateTimeBehavior=convertToNull&useSSL=false","root","");
             out.println("Inside");
             PreparedStatement pst = connection.prepareStatement("select doc_dob from data where doc_email=?");
             out.println("Inside");

@@ -1,18 +1,16 @@
 <%-- 
-    Document   : Doc_signedin
-    Created on : Apr 18, 2020, 10:40:47 AM
+    Document   : viewAllPatients
+    Created on : Apr 18, 2020, 7:47:02 PM
     Author     : DC
 --%>
 
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.util.Date"%>
-<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.sql.DriverManager"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,11 +95,8 @@
     </thead>
     <tbody>
         <%try{
-        Date dNow = new Date( );
-        SimpleDateFormat ft = new SimpleDateFormat ("yyyy-MM-dd");
         connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/hospital_management_system","root","");
-        pst=connection.prepareStatement("SELECT pat_id,pat_name,pat_gender,pat_age,pat_doa FROM patient WHERE pat_doa=?");
-        pst.setString(1,ft.format(dNow));
+        pst=connection.prepareStatement("SELECT pat_id,pat_name,pat_gender,pat_age,pat_doa FROM patient");
         resultset=pst.executeQuery();
         while(resultset.next()){
 %>
@@ -128,4 +123,3 @@
     
 </body>
 </html>
-
